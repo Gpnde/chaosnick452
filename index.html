@@ -2,53 +2,78 @@
 <html lang="en">
 <head>
 <style>
+    /* Navbar styles */
     .navbar {
-  background-color: purple;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  width: 100%; /* 100% Breite */
-  height: 70px; /* Höhe wie das Original */
-} 
+        background-color: purple;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        height: 70px;
+    } 
+
+    /* Hamburger icon */
     #hamburger {
-  display: none;
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
-  position: absolute;
-  right: 10%; 
-        }
+        display: none;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 10%; 
+    }
+
+    /* Dropdown menu */
     .dropdown {
-          display: none;
-          background-color: #333;
-          color: #fff;
-          position: absolute;
-          top: 80px;
-          right: 10px;
-          padding: 10px;
-          z-index: 1;
-          border-radius: 5px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+        display: none;
+        background-color: #333;
+        color: #fff;
+        position: absolute;
+        top: 80px;
+        right: 10px;
+        padding: 10px;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dropdown menu list styles */
     .dropdown ul {
-          list-style-type: none;
-          padding: 0;
-          margin: 0;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Dropdown link styles */
+    .dropdown-link {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        transition: background-color 0.3s;
+    }
+
+    /* Hover effect for dropdown links */
+    .dropdown-link:hover {
+        background-color: #555;
+    }
+
+    /* Media query for mobile responsiveness */
+    @media screen and (max-width: 768px) {
+        #hamburger {
+            display: block;
         }
 
-        .dropdown-link {
-          color: #fff;
-          text-decoration: none;
-          display: block;
-          padding: 10px;
-          transition: background-color 0.3s;
+        .navbar h1 {
+            margin-left: 10px;
         }
+    }
 
-        .dropdown-link:hover {
-          background-color: #555;
-        }
+    /* Show dropdown when active */
+    .dropdown.active {
+        display: block;
+    }
 
 </style>
     <meta charset="UTF-8">
@@ -56,28 +81,33 @@
     <title>Chaosnick45</title>
 </head>
 <body>
-  <div class="navbar"> <h1>Chaosnick45</h1> 
-  <div id="hamburger">&#9776;</div>
-  <div class="dropdown">
-    <ul>
-      <li><a href="timeline.html" class="dropdown-link">Zeitsrahl</a></li>
-      <li><a href="Info.html" class="dropdown-link">Information</a></li>
-      <li><a href="quiz.html" class="dropdown-link">Quiz</a></li>
-    </ul>
-  </div>
-  </div>
-</div>
-    Hallo mein name ist Niklas<br>
-    Ich bin euer Tutorial YouTuber und das schon sehr lange. Ich erstellte meinen YouTube Kanal am<br>
-     
-<script>
-     var hamburger = document.getElementById("hamburger");
-var dropdown = document.querySelector('.dropdown');
+    <!-- Navbar -->
+    <div class="navbar"> 
+        <h1>Chaosnick45</h1> 
+        <div id="hamburger">&#9776;</div>
+        <div class="dropdown">
+            <ul>
+                <li><a href="timeline.html" class="dropdown-link">Zeitsrahl</a></li>
+                <li><a href="Info.html" class="dropdown-link">Information</a></li>
+                <li><a href="quiz.html" class="dropdown-link">Quiz</a></li>
+            </ul>
+        </div>
+    </div>
 
-hamburger.addEventListener('click', function() {
-  dropdown.classList.toggle('active');
-});
+    <!-- Main content -->
+    <div>
+        Hallo mein Name ist Niklas<br>
+        Ich bin euer Tutorial YouTuber und das schon sehr lange. Ich erstellte meinen YouTube Kanal am<br>
+    </div>
 
- </script>
+    <!-- JavaScript for hamburger and dropdown menu -->
+    <script>
+        var hamburger = document.getElementById("hamburger");
+        var dropdown = document.querySelector('.dropdown');
+
+        hamburger.addEventListener('click', function() {
+            dropdown.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
