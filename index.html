@@ -16,12 +16,11 @@
 
     /* Hamburger icon */
     #hamburger {
-        display: none;
         color: #fff;
         font-size: 30px;
         cursor: pointer;
-        position: absolute;
-        right: 10%; 
+        position: relative; /* Adjusted for absolute positioning within navbar */
+        right: 10px;
     }
 
     /* Dropdown menu */
@@ -57,17 +56,6 @@
     /* Hover effect for dropdown links */
     .dropdown-link:hover {
         background-color: #555;
-    }
-
-    /* Media query for mobile responsiveness */
-    @media screen and (max-width: 768px) {
-        #hamburger {
-            display: block;
-        }
-
-        .navbar h1 {
-            margin-left: 10px;
-        }
     }
 
     /* Show dropdown when active */
